@@ -1,4 +1,15 @@
 const form = document.querySelector("form");
+const REQUIRED = ["name", "email", "message"];
+const submitBtn = form.querySelector('[type="submit"]');
+submitBtn.disabled = true;
+
+REQUIRED.every((field) => form[field].value.trim() !== "");
+
+form.addEventListener("input", () => {
+  REQUIRED.every((field) => form[field].value.trim() !== "")
+    ? (submitBtn.disabled = false)
+    : (submitBtn.disabled = true);
+});
 
 form.addEventListener("submit", (event) => {
   event.preventDefault();
