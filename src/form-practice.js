@@ -1,5 +1,5 @@
 const form = document.querySelector("form");
-const REQUIRED = ["name", "email", "message"];
+const REQUIRED = ["name", "email", "password", "confirmPassword"];
 const submitBtn = form.querySelector('[type="submit"]');
 submitBtn.disabled = true;
 
